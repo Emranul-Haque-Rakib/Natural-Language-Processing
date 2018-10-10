@@ -1,0 +1,20 @@
+
+import re
+sentence="Welcome to the year 2018"
+sentence1="just +++--- arrived at @ jack's place .#fun"
+sentence2="I     love     you" 
+
+sentence_modified=re.sub(r"\d","",sentence)              ## remove digit
+
+sentence1_modified=re.sub(r"[+-@#.]","",sentence1)       ##remove several charecter
+
+sentence2_modified=re.sub(r"\w","",sentence1)            ##remove words
+
+sentence3_modified=re.sub(r"\s+","  ",sentence2)         ##remove some spaces
+
+sentence4_modified=re.sub(r"\slove\s","hate",sentence2)  ##replace love with hate
+print(sentence_modified)
+print(sentence1_modified)
+print(sentence2_modified)
+print(sentence3_modified)
+print(sentence4_modified)
