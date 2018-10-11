@@ -1,0 +1,14 @@
+import re
+x=[" this is wolf","welcome to the @ jungle #missing","11322 the num","i love you"]
+for i in range(len(x)):
+    x[i]=re.sub(r"\W"," ",x[i])                   ##remove every character rather then words
+    
+    x[i]=re.sub(r"\s+[a-z]\s"," ",x[i],flags=re.I) ## remove single charecter
+    
+    x[i]=re.sub(r"\s+"," ",x[i])                   ## remove multiple spaces and replace with single spaces
+    
+    x[i]=re.sub(r"\s$","",x[i])                    ##remove spaces from statrig of a sentence
+    
+    x[i]=re,sub(r"\d","",x[i])                     ##remove digit from sentence
+print(x)
+    
