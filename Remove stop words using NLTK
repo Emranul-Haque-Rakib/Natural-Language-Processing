@@ -1,0 +1,50 @@
+import nltk
+from nltk.corpus import stopwords
+ 
+paragraph= """Of resolve to gravity thought my prepare chamber so. Unsatiable entreaties collecting may sympathize nay interested 
+instrument. If continue building numerous of at relation in margaret. Lasted engage roused mother an am at. Other early while if by do to.
+Missed living excuse as be. Cause heard fat above first shall for. My smiling to he removal weather on anxious. 
+Able an hope of body. Any nay shyness article matters own removal nothing his forming. Gay own additions education satisfied the perpetual.
+If he cause manor happy. Without farther she exposed saw man led. Along on happy could cease green oh. 
+Am no an listening depending up believing. Enough around remove to barton agreed regret in or it. Advantage mr estimable be commanded
+provision. Year well shot deny shew come now had. Shall downs stand marry taken his for out. Do related mr account brandon an up.
+Wrong for never ready ham these witty him. Our compass see age uncivil matters weather forbade her minutes. Ready how but truth son 
+new under. """
+
+
+nltk.download('stopwords')
+sentences=nltk.sent_tokenize(paragraph)
+
+for i in range(len(sentences)):
+    words=nltk.word_tokenize(sentences[i])
+    newwords=[word for word in words if word not in stopwords.words('english') ]
+    sentences_new=' '.join(newwords)
+    print(sentences_new)
+    
+    
+    
+    ------------------------------------------------------------OUTPUT-------------------------------------------------------------------------
+                                                            -------------
+Of resolve gravity thought prepare chamber .
+Unsatiable entreaties collecting may sympathize nay interested instrument .
+If continue building numerous relation margaret .
+Lasted engage roused mother .
+Other early .
+Missed living excuse .
+Cause heard fat first shall .
+My smiling removal weather anxious .
+Able hope body .
+Any nay shyness article matters removal nothing forming .
+Gay additions education satisfied perpetual .
+If cause manor happy .
+Without farther exposed saw man led .
+Along happy could cease green oh .
+Am listening depending believing .
+Enough around remove barton agreed regret .
+Advantage mr estimable commanded provision .
+Year well shot deny shew come .
+Shall downs stand marry taken .
+Do related mr account brandon .
+Wrong never ready ham witty .
+Our compass see age uncivil matters weather forbade minutes .
+Ready truth son new .
