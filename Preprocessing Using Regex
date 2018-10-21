@@ -5,7 +5,7 @@ for i in range(len(x)):
     
     x[i]=re.sub(r"\s+[a-z]\s"," ",x[i],flags=re.I) ## remove single charecter
     
-    x[i]=re.sub(r"\s+"," ",x[i])                   ## remove multiple spaces and replace with single spaces
+    x[i]=re.sub(r"\S+"," ",x[i])                   ## remove multiple spaces and replace with single spaces
     
     x[i]=re.sub(r"\s$","",x[i])                    ##remove spaces from statrig of a sentence
     
